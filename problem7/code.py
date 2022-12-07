@@ -16,14 +16,8 @@ for x in f:
             size, filename = x.strip().split(" ")
             for i in range(len(path)+1):
                 if i!=0:
-                    print(path[:i])
-                    print(x)
-                    print(path)
-                    print(sizedict)
                     sizedict[functools.reduce(lambda x, y: x +"/" + y,path[:i])] += int(size)
         else:
-            print(functools.reduce(lambda x, y: x +"/" + y,path)+"/"+ x.strip().split(" ")[1])
-            print(x)
             sizedict[functools.reduce(lambda x, y: x +"/" + y,path)+"/" + x.strip().split(" ")[1]]=0
 total = 0
 for y in sizedict.values():
